@@ -28,9 +28,12 @@ while True:
     elif metodo == "paypal":
         gestore = GestorePagamenti(PayPal())
     elif metodo == "bonifico":
-        gestore = GestorePagamenti(BonificoBancario())
+        bonifico = BonificoBancario()
+        gestore = GestorePagamenti(bonifico)    #è uguale a sopra
     else:
         print("Metodo non valido, riprova.")
         continue
     
     gestore.esegui_pagamento(importo)
+
+
